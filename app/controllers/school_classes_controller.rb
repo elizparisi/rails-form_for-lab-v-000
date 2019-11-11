@@ -3,7 +3,9 @@ class SchoolClassesController < ApplicationController
   def index 
     @school_classes = SchoolClass.all
   end
-  
+  def show 
+    @school_class = SchoolClass.find(params[:id])
+  end
   def new 
     @school_class = SchoolClass.new
   end 
@@ -14,9 +16,7 @@ class SchoolClassesController < ApplicationController
     redirect_to school_class_path(@school_class)
   end 
   
-  def show 
-    @school_class = SchoolClass.find(params[:id])
-  end 
+   
   
   def edit 
     @school_class = SchoolClass.find(params[:id])
